@@ -1,8 +1,8 @@
 <template>
   <div class="badRequest">
     <img src="./../assets/notFound22.png" alt="">
-    <h1>Ошибка запроса</h1>
-    <p>Вы ввели неверный номер либо контейнер не существует</p>
+    <h1>错误</h1>
+    <p>您输入的号码不正确</p>
     <b-button v:click="goMain" variant="primary"><router-link to="/" style="color: white;">Главная</router-link></b-button>
   </div>
 </template>

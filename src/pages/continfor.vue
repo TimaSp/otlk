@@ -13,22 +13,10 @@
         <b-col style="padding: 0px 15px 20px;">
           <div class="departureLocation">
             <ul>
-              <li>Отправка: <br>{{$route.params.contProps[0].DepartureStationName}}</li>
+              <li>出发地点: <br>{{$route.params.contProps[0].DepartureStationName}}</li>
             </ul>
             <ul>
-              <li>Прибытие: <br>{{$route.params.contProps[0].ArrivalStationName}}</li>
-            </ul>
-          </div>
-        </b-col>
-      </b-row>
-      <b-row>
-        <b-col>
-          <div class="operationState">
-            <ul>
-              <li>Станция операции: <br> <span>{{$route.params.contProps[0].OperationStationName}}</span></li>
-            </ul>
-            <ul>
-              <li>Дата операции: <br><span>{{operationDate}}</span></li>
+              <li>到达地点: <br>{{$route.params.contProps[0].ArrivalStationName}}</li>
             </ul>
           </div>
         </b-col>
@@ -37,7 +25,19 @@
         <b-col>
           <div class="operationState">
             <ul>
-              <li>Операция: <br><span>{{$route.params.contProps[0].OperationName}}</span></li>
+              <li>操作地点: <br> <span>{{$route.params.contProps[0].OperationStationName}}</span></li>
+            </ul>
+            <ul>
+              <li>操作日期: <br><span>{{operationDate}}</span></li>
+            </ul>
+          </div>
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col>
+          <div class="operationState">
+            <ul>
+              <li>操作方式: <br><span>{{$route.params.contProps[0].OperationName}}</span></li>
             </ul>
           </div>
         </b-col>
@@ -78,8 +78,6 @@ export default {
     this.departure.push(this.$route.params.contProps[0].DepartureStationLongitude, this.$route.params.contProps[0].DepartureStationLatitude)
     let b = this.$route.params.contProps[0].OperationDate.match(/\((.*)\)/)
     this.operationDate = moment(this.$route.params.contProps[0].OperationDate).format('DD/MM/YYYY');
-    
-    console.log('FSSS', b)
   },
   watch: {
     position() {

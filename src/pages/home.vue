@@ -15,7 +15,7 @@
       <b-row>
         <b-col>
           <div class="headText">
-            <h3>Евразийский Железнодорожный Альянс</h3>
+            <h3>Eurasian Rail Alliance</h3>
           </div>
         </b-col>
       </b-row>
@@ -25,7 +25,7 @@
       <b-row>
         <b-col>
           <div class="startButton">
-            <b-button :class="[searchToggled ? hideButton : '']" v-on:click="toggleSearch" variant="primary">Начать</b-button>
+            <b-button :class="[searchToggled ? hideButton : '']" v-on:click="toggleSearch" variant="primary">开始</b-button>
           </div>
         </b-col>
       </b-row>
@@ -46,11 +46,11 @@
                     id="input-1"
                     v-model="contNum"
                     required
-                    placeholder="Введите номер"
+                    placeholder="输入号码"
                   ></b-form-input>
                 </b-form-group>
                 <div class="searchButton">
-                  <b-button type="submit" variant="primary">Поиск</b-button>
+                  <b-button type="submit" variant="primary">搜索</b-button>
                 </div>
               </b-form>
             </div>
@@ -94,7 +94,7 @@ export default {
       axios.post('https://outbound.utlc.com:4431/Service.svc/GetTrackingPublic', {
         ContNumber: this.contNum,
         OrderNumber: "",
-        LangGUID:"1" 
+        LangGUID:"FFD20A8A-CD48-4ACA-A25C-49003059741B" 
       })
       .then(response => {
         this.info = response.data.Tracking
